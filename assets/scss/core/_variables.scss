@@ -1,0 +1,23 @@
+// theme colors
+$primary-color: #000;
+$primary-color-dark: lighten($primary-color, 5%);
+$primary-color-light: darken($primary-color, 5%);
+
+$secondary-color: #000;
+$secondary-color-dark: lighten($secondary-color, 5%);
+$secondary-color-light: darken($secondary-color, 5%);
+
+$dark-white: #fbfbfb;
+$light-grey: #efefef;
+$grey: #858585;
+
+$nav-height: 63px;
+
+$text-color: #000;
+$link-color: #000;
+
+// Social colors
+$twitter-color: #369afe;
+$facebook-color: #385a98;
+$whatsapp-color: #43d854;
+$pinterest-color: #c93019;
