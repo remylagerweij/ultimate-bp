@@ -1,3 +1,5 @@
+@import "flex";
+
 // Mixins
 @mixin easeOutCubic($time:200ms) {
   -webkit-transition: all $time cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -11,14 +13,14 @@
         transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
 @mixin easeInCubic($time:200ms) {
-    -webkit-transition: all $time cubic-bezier(0.550, 0.055, 0.675, 0.190); 
-   -moz-transition: all $time cubic-bezier(0.550, 0.055, 0.675, 0.190); 
-     -o-transition: all $time cubic-bezier(0.550, 0.055, 0.675, 0.190); 
+    -webkit-transition: all $time cubic-bezier(0.550, 0.055, 0.675, 0.190);
+   -moz-transition: all $time cubic-bezier(0.550, 0.055, 0.675, 0.190);
+     -o-transition: all $time cubic-bezier(0.550, 0.055, 0.675, 0.190);
         transition: all $time cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
 
--webkit-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190); 
-   -moz-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190); 
-     -o-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190); 
+-webkit-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+   -moz-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+     -o-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
         transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190); /* easeInCubic */
 }
 @mixin pulseAnimation($to:1.2,$from: 1){
@@ -40,29 +42,6 @@
     display: inline-block;
     margin-right: $size/5;
     text-indent: -9999px;
-}
-@mixin flexbox() {
-  -js-display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-@mixin flex($value) {
-  -webkit-box-flex: $value;
-  -moz-box-flex:  $value;
-  -webkit-flex:  $value;
-  -ms-flex:  $value;
-  flex:  $value;
-}
-
-@mixin order($value) {
-  -webkit-box-ordinal-group: $value;  
-  -moz-box-ordinal-group: $value;     
-  -ms-flex-order: $value;     
-  -webkit-order: $value;  
-  order: $value;
 }
 
 .background-cover {
@@ -102,61 +81,57 @@
   @if $class == xs {
     @media (min-width: 481px) { @content; }
   }
- 
+
   @else if $class == sm {
     @media (min-width: 768px) { @content; }
   }
- 
+
   @else if $class == md {
     @media (min-width: 992px) { @content; }
   }
- 
+
   @else if $class == lg {
     @media (min-width: 1200px) { @content; }
-  }
- 
-  @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
 }
 
 @mixin portrait {
-  @media screen and (orientation:portrait) { 
-    @content; 
+  @media screen and (orientation:portrait) {
+    @content;
   }
 }
 @mixin landscape {
-  @media screen and (orientation:landscape) { 
-    @content; 
+  @media screen and (orientation:landscape) {
+    @content;
   }
 }
 @mixin ipad-portrait {
-  @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+  @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : portrait)
-    and (-webkit-min-device-pixel-ratio: 2) { 
+    and (-webkit-min-device-pixel-ratio: 2) {
       @content;
   }
-  @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (orientation : portrait) 
-    and (-webkit-min-device-pixel-ratio: 1) { 
+  @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : portrait)
+    and (-webkit-min-device-pixel-ratio: 1) {
       @content;
   }
 }
 @mixin ipad-landscape {
-  @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+  @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : landscape)
     and (-webkit-min-device-pixel-ratio: 2) {
       @content;
   }
-  @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+  @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : landscape)
     and (-webkit-min-device-pixel-ratio: 1)  {
       @content;
